@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>خطة تحسين نتائج نافس — مستقبل الأحفاد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --green: #0B6E4F;
+  --green-deep: #064E3B;
+  --teal: #0E7490;
+  --teal-soft: #ECFEFF;
+  --bg: #F4F7F5;
+  --paper: #FFFFFF;
+  --ink: #0F172A;
+  --muted: #475569;
+  --line: #D8E3DC;
+  --low2: #DC2626;
+  --low: #EA580C;
+  --mid: #0284C7;
+  --high: #16A34A;
+  --sidebar: 280px;
+  --shadow: 0 10px 30px rgba(6, 78, 59, 0.08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+body {
+  margin: 0;
+  font-family: "Noto Naskh Arabic", "Traditional Arabic", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(14,116,144,.08), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(11,110,79,.10), transparent 35%),
+    var(--bg);
+  line-height: 1.7;
+}
+.ui { font-family: "IBM Plex Sans Arabic", Tahoma, sans-serif; }
+a { color: var(--teal); }
+.skip {
+  position: absolute; inset-inline-start: 1rem; top: -3rem; background: var(--green);
+  color: #fff; padding: .6rem 1rem; border-radius: 8px; z-index: 100; text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  min-height: 100vh;
+}
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow: auto; order: -1;
+  background: linear-gradient(180deg, var(--green-deep), var(--green));
+  color: #fff; padding: 1.25rem 1rem 2rem; border-inline-end: 1px solid rgba(255,255,255,.08);
+}
+.brand {
+  padding: .5rem .75rem 1rem; border-bottom: 1px solid rgba(255,255,255,.15); margin-bottom: 1rem;
+}
+.brand .kicker { opacity: .8; font-size: .78rem; margin: 0; }
+.brand h1 { font-size: 1.05rem; margin: .35rem 0 0; line-height: 1.4; font-weight: 700; }
+.nav-item {
+  display: block; color: rgba(255,255,255,.88); text-decoration: none;
+  padding: .55rem .75rem; border-radius: 10px; margin: .15rem 0; font-size: .92rem;
+  border: 1px solid transparent; transition: background .2s, border-color .2s;
+}
+.nav-item:hover, .nav-item:focus-visible {
+  background: rgba(255,255,255,.12); outline: none; border-color: rgba(255,255,255,.25);
+}
+.nav-item.active {
+  background: #fff; color: var(--green-deep); font-weight: 600;
+}
+.main { padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 4rem; max-width: 1100px; }
+.section {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 18px;
+  padding: clamp(1.2rem, 2vw, 2rem); margin-bottom: 1.25rem; box-shadow: var(--shadow);
+  scroll-margin-top: 1rem;
+}
+.section-head h2 { margin: .2rem 0 .5rem; color: var(--green-deep); font-size: 1.55rem; }
+.eyebrow {
+  display: inline-block; margin: 0; color: var(--teal); font-weight: 600; font-size: .85rem;
+  letter-spacing: .02em; font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+.cover {
+  background:
+    linear-gradient(135deg, rgba(11,110,79,.95), rgba(14,116,144,.88)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #fff; border: none;
+}
+.cover h2 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.3rem); margin: .6rem 0; }
+.cover .meta-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; margin-top: 1.25rem;
+}
+.meta-card {
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 14px; padding: .85rem 1rem;
+}
+.meta-card span { display: block; opacity: .8; font-size: .8rem; }
+.meta-card strong { font-size: 1.05rem; }
+.sign-row {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;
+}
+.sign {
+  flex: 1; min-width: 220px; background: rgba(255,255,255,.1); border-radius: 12px; padding: 1rem;
+}
+.target-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;
+}
+@media (max-width: 900px) {
+  .target-grid { grid-template-columns: 1fr; }
+  .app { grid-template-columns: 1fr; }
+  .sidebar {
+    position: relative; height: auto; max-height: none;
+  }
+  .nav-toggle { display: inline-flex !important; }
+  .nav-list.collapsed { display: none; }
+}
+.target {
+  border: 1px solid var(--line); border-radius: 14px; padding: 1rem; background: #FBFFFD;
+}
+.target h3 { margin: 0 0 .4rem; color: var(--green); font-size: 1.05rem; }
+.level-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin: 1rem 0;
+}
+.lvl {
+  border-radius: 12px; padding: .85rem; color: #fff; text-align: center; font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+.lvl.vlow { background: var(--low2); }
+.lvl.low { background: var(--low); }
+.lvl.mid { background: var(--mid); }
+.lvl.high { background: var(--high); }
+.lvl b { display: block; font-size: 1.35rem; }
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;
+}
+.stat {
+  border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; background: linear-gradient(180deg, #fff, #F7FBFA);
+}
+.stat .n {
+  font-size: 2rem; font-weight: 700; color: var(--green-deep); font-family: "IBM Plex Sans Arabic", sans-serif; line-height: 1.1;
+}
+.stat .label { color: var(--muted); font-size: .9rem; }
+.delta-down { color: var(--low2); font-weight: 700; }
+.delta-up { color: var(--high); font-weight: 700; }
+.chart-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1rem; margin: 1rem 0 1.4rem;
+}
+.nafs-chart {
+  margin: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff;
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.nafs-chart img {
+  width: 100%; height: auto; display: block; background: #fff;
+}
+.nafs-chart figcaption {
+  padding: .65rem .85rem .85rem; font-size: .88rem; color: var(--muted); line-height: 1.55;
+  border-top: 1px solid var(--line); font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+.findings {
+  display: grid; gap: .75rem; margin: 1rem 0 1.25rem;
+}
+.finding {
+  border: 1px solid var(--line); border-radius: 14px; padding: .9rem 1rem;
+  border-inline-start: 5px solid var(--mid); background: #fff;
+}
+.finding h4 { margin: 0 0 .35rem; font-size: 1rem; color: var(--ink); }
+.finding p { margin: 0; color: var(--text); line-height: 1.7; font-size: .95rem; }
+.finding.alert { border-inline-start-color: var(--low2); background: #FFF8F7; }
+.finding.warn { border-inline-start-color: var(--low); background: #FFFBF5; }
+.finding.info { border-inline-start-color: var(--blue, #3D7EB9); background: #F7FBFE; }
+.finding.good { border-inline-start-color: var(--high); background: #F3FBF6; }
+.table-wrap { overflow-x: auto; }
+table.data {
+  width: 100%; border-collapse: collapse; font-size: .95rem; background: #fff;
+}
+table.data th, table.data td {
+  border: 1px solid var(--line); padding: .55rem .65rem; text-align: right; vertical-align: top;
+}
+table.data th {
+  background: var(--green); color: #fff; font-family: "IBM Plex Sans Arabic", sans-serif; font-weight: 600;
+}
+table.data tr:nth-child(even) td { background: #F8FBF9; }
+.panel {
+  border: 1px solid var(--line); border-radius: 14px; padding: 1rem; margin: 1rem 0; background: #FBFFFD;
+}
+.panel h3 { margin-top: 0; color: var(--teal); }
+.cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;
+}
+.card {
+  border: 1px solid var(--line); border-radius: 14px; padding: 1rem; background: #fff;
+  border-top: 4px solid var(--green);
+}
+.card h3 { margin: 0 0 .5rem; font-size: 1.05rem; color: var(--green-deep); }
+.card ul { margin: .4rem 0 0; padding-inline-start: 1.2rem; }
+.initiative {
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 1rem 0; background: #fff;
+}
+.initiative .top {
+  display: grid; grid-template-columns: 1.4fr 1fr; background: var(--green); color: #fff;
+}
+.initiative .top div { padding: .7rem .9rem; border-inline-start: 1px solid rgba(255,255,255,.2); }
+.initiative .top .lbl { opacity: .85; font-size: .78rem; display: block; }
+.initiative .body { padding: .9rem 1rem; }
+.initiative .body h4 { margin: 0 0 .4rem; color: var(--muted); font-size: .85rem; }
+.initiative .foot {
+  display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); background: #F8FBF9;
+}
+.initiative .foot div { padding: .7rem .9rem; border-inline-start: 1px solid var(--line); }
+.bank-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;
+}
+.bank-card {
+  border: 1px solid var(--line); border-radius: 14px; padding: 1rem; background: #fff;
+}
+.bank-card header { display: flex; gap: .6rem; align-items: flex-start; }
+.bank-card h3 { margin: 0; font-size: 1.05rem; color: var(--green-deep); }
+.badge {
+  flex: 0 0 auto; width: 1.7rem; height: 1.7rem; border-radius: 999px; background: var(--teal);
+  color: #fff; display: grid; place-items: center; font-size: .8rem; font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+.meta { color: var(--muted); font-size: .88rem; margin: .4rem 0; }
+.links { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0; }
+.res-link {
+  display: inline-block; padding: .25rem .55rem; border-radius: 999px; background: var(--teal-soft);
+  color: var(--teal); text-decoration: none; font-size: .8rem; font-family: "IBM Plex Sans Arabic", sans-serif;
+  border: 1px solid #A5F3FC;
+}
+.res-link:hover { background: #CFFAFE; }
+.q-slot {
+  margin-top: .6rem; padding: .65rem; border-radius: 10px; background: #F8FAFC; border: 1px dashed var(--line);
+}
+.muted { color: var(--muted); }
+.nav-toggle {
+  display: none; align-items: center; gap: .5rem; background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25); color: #fff; border-radius: 10px; padding: .55rem .8rem;
+  width: 100%; cursor: pointer; font-family: "IBM Plex Sans Arabic", sans-serif; margin-bottom: .75rem;
+}
+.footer-note {
+  text-align: center; color: var(--muted); font-size: .85rem; margin-top: 1rem;
+}
+@media print {
+  .sidebar, .skip, .nav-toggle { display: none !important; }
+  .app { display: block; }
+  .section { break-inside: avoid; box-shadow: none; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<a class="skip ui" href="#main">تخطّى إلى المحتوى</a>
+<div class="app">
+  <main id="main" class="main">
+
+    <section id="cover" class="section cover">
+      <p class="eyebrow ui" style="color:#CFFAFE">وزارة التعليم — الإدارة العامة للتعليم بمنطقة جازان</p>
+      <h2>خطة تحسين نتائج الاختبارات الوطنية (نافس)</h2>
+      <p>ابتدائية مدارس شركة مستقبل الأحفاد الأهلية — الفصل الدراسي الأول 1448هـ / بطاقة نافس 1447هـ</p>
+      <div class="meta-grid ui">
+        <div class="meta-card"><span>الرقم الإحصائي</span><strong>187017</strong></div>
+        <div class="meta-card"><span>جنس المدرسة</span><strong>بنين</strong></div>
+        <div class="meta-card"><span>المرحلة</span><strong>ابتدائية</strong></div>
+        <div class="meta-card"><span>المنطقة</span><strong>جازان</strong></div>
+      </div>
+      <div class="sign-row ui">
+        <div class="sign"><span>لجنة التحصيل الدراسي</span><br/><strong>فريق تحسين نتائج نافس</strong></div>
+        <div class="sign"><span>اعتماد مدير المدرسة</span><br/><strong>محمد عمر العاجمي</strong></div>
+      </div>
+    </section>
+
+    <section id="intro" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">المقدمة</p>
+        <h2>المقدمة والفئات المستهدفة</h2>
+      </div>
+      <p>
+        تُعد اختبارات نافس أداة وطنية لقياس نواتج التعلم في القراءة والرياضيات والعلوم.
+        تهدف هذه الخطة إلى تشخيص الفجوات من بطاقة نافس الأخيرة، وبناء تدخلات مبنية على البيانات،
+        ومتابعة الأثر عبر قياسات الفصل الأول (تشخيصي — ماهرون 1/2/3 — تجريبي).
+      </p>
+      <div class="target-grid">
+        <div class="target">
+          <h3>الصف الثالث الابتدائي</h3>
+          <p>مجال القراءة والرياضيات — قياس نواتج التعلم الأساسية.</p>
+        </div>
+        <div class="target">
+          <h3>الصف السادس الابتدائي</h3>
+          <p>القراءة والرياضيات والعلوم — قياس الفهم والتطبيق والاستدلال.</p>
+        </div>
+        <div class="target">
+          <h3>نطاق التنفيذ</h3>
+          <p>يُعتمد التقويم الزمني لخطة الدعم الأسبوعية (16 أسبوعاً للفصل الأول).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="levels" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">المقياس</p>
+        <h2>مستويات الأداء وقراءة النتائج</h2>
+      </div>
+      <div class="level-bar ui">
+        <div class="lvl vlow"><b>منخفض جداً</b>دون الحد الأدنى المطلوب</div>
+        <div class="lvl low"><b>منخفض</b>أداء دون المتوقع</div>
+        <div class="lvl mid"><b>متوسط</b>أداء مناسب أساسي</div>
+        <div class="lvl high"><b>مرتفع</b>إتقان واستدلال متقدم</div>
+      </div>
+      <p class="muted">الحد الأدنى للإتقان يقع بين مستوى «منخفض» و«متوسط». تُقرأ النتائج على مستوى المجال والمهارة والصف والطالب.</p>
+    </section>
+
+    <section id="team" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">القرار</p>
+        <h2>قرار تشكيل فريق تحسين نتائج نافس</h2>
+      </div>
+      <p>بناءً على صلاحيات مدير المدرسة، وبعد الاطلاع على بطاقات نافس للصفين الثالث والسادس (1447هـ)، يُشكَّل الفريق على النحو التالي:</p>
+      <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>م</th><th>الاسم</th><th>المهمة / العمل</th><th>الصفة</th><th>التوقيع</th></tr></thead>
+        <tbody>
+        <tr><td>1</td><td>محمد عمر العاجمي</td><td>مدير المدرسة</td><td>رئيس</td><td></td></tr>
+<tr><td>2</td><td>محمد السيد عطية</td><td>وكيل الشؤون التعليمية / منسق الاختبار والجاهزية</td><td>نائب الرئيس</td><td></td></tr>
+<tr><td>3</td><td>محمد محمد بيومي</td><td>وكيل شؤون الطلاب / منسق نافس (مقرر الفريق)</td><td>عضو</td><td></td></tr>
+<tr><td>4</td><td>صالح سالم أبو راس</td><td>الموجه الطلابي</td><td>عضو</td><td></td></tr>
+<tr><td>5</td><td>أحمد الشولبي</td><td>معلم الرياضيات</td><td>عضو</td><td></td></tr>
+<tr><td>6</td><td>حسين عيسى</td><td>معلم لغة عربية / القراءة</td><td>عضو</td><td></td></tr>
+<tr><td>7</td><td>محمد سليمان</td><td>معلم العلوم</td><td>عضو</td><td></td></tr>
+<tr><td>8</td><td>سلطان آدم حدادي</td><td>رائد النشاط</td><td>عضو</td><td></td></tr>
+<tr><td>9</td><td>علي صلاح</td><td>معلم صف ثالث</td><td>عضو</td><td></td></tr>
+<tr><td>10</td><td>محمد عبدالرشيد</td><td>معلم صف ثالث</td><td>عضو</td><td></td></tr>
+<tr><td>11</td><td>إبراهيم صالح</td><td>معلم صف ثالث</td><td>عضو</td><td></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="muted">العام الدراسي 1448هـ — ختم واعتماد مدير المدرسة: محمد عمر العاجمي</p>
+    </section>
+
+    <section id="roles" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">المهام</p>
+        <h2>الأدوار والمهام</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>فريق تحسين نتائج نافس</h3>
+          <ul>
+            <li>تحليل بطاقات الأداء ونتائج المحاكيات على مستوى المجال والمهارة والصف والطالب.</li>
+            <li>اعتماد الأولويات والأهداف المرحلية وخريطة التدخل ومراجعتها بعد كل قياس.</li>
+            <li>متابعة المبادرات والتحقق من جودة الشواهد واقتراح الإجراءات التصحيحية.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>منسق نافس — محمد محمد بيومي</h3>
+          <ul>
+            <li>بناء قاعدة بيانات موحّدة ولوحة مؤشرات دقيقة.</li>
+            <li>تحليل الاتجاهات والفجوات وتزويد المعلمين والقيادة بملخصات قابلة للتنفيذ.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>منسق الاختبار والجاهزية — محمد السيد عطية</h3>
+          <ul>
+            <li>استكمال المتطلبات التنظيمية والتقنية والمكانية وتحديث قوائم الطلاب وخطط الطوارئ.</li>
+            <li>تنفيذ قوائم تحقق الجاهزية والمحاكاة ومعالجة الملاحظات قبل التطبيق.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>معلمو المواد المستهدفة</h3>
+          <ul>
+            <li>مواءمة التخطيط اليومي مع نواتج التعلم والمهارات ذات الأولوية.</li>
+            <li>تطبيق التقويم التشخيصي والتكويني والتدخل المتدرج وتوثيق الشواهد.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="baseline" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">بطاقة نافس 1447هـ</p>
+        <h2>خط الأساس ونتائج المدرسة</h2>
+        <p>مصدر البيانات: بطاقة نافس للصف الثالث والصف السادس — الرقم الوزاري S-187017. الرسوم مأخوذة من تحليل بطاقات نافس داخل جهاز المدرسة.</p>
+      </div>
+
+      <h3>الصف الثالث الابتدائي (مختبرون 40 من 63 — مشاركة 63.5%)</h3>
+      <div class="stat-row">
+        <div class="stat"><div class="n">10%</div><div class="label">إتقان المجالين معاً (2026)</div><div class="delta-down ui">▼ من 26.7% عام 2024</div></div>
+        <div class="stat"><div class="n">17.5%</div><div class="label">إتقان القراءة</div><div class="delta-down ui">▼ −31.4 نقطة عن 2024</div></div>
+        <div class="stat"><div class="n">25%</div><div class="label">استيعاب المقروء — أولوية</div><div class="muted">دلالات الألفاظ 40%</div></div>
+        <div class="stat"><div class="n">35%</div><div class="label">الأعداد والعمليات — أولوية</div><div class="muted">هندسة 37.5% · جبر 70%</div></div>
+      </div>
+      <p class="ui" style="margin:.8rem 0 .3rem;font-weight:600">توزيع مستويات القراءة</p>
+      <div class="level-bar ui">
+        <div class="lvl high"><b>2.5%</b>مرتفع</div>
+        <div class="lvl mid"><b>15%</b>متوسط</div>
+        <div class="lvl low"><b>47.5%</b>منخفض</div>
+        <div class="lvl vlow"><b>35%</b>منخفض جداً</div>
+      </div>
+      <p class="ui" style="margin:.8rem 0 .3rem;font-weight:600">توزيع مستويات الرياضيات</p>
+      <div class="level-bar ui">
+        <div class="lvl high"><b>15%</b>مرتفع</div>
+        <div class="lvl mid"><b>22.5%</b>متوسط</div>
+        <div class="lvl low"><b>42.5%</b>منخفض</div>
+        <div class="lvl vlow"><b>20%</b>منخفض جداً</div>
+      </div>
+      <h4 class="ui" style="margin:1.2rem 0 .4rem">رسوم الصف الثالث من بطاقة نافس</h4>
+      <div class="chart-grid">
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-01.png" alt="توزيع الطلاب المختبرين على مستويات الأداء للصف الثالث الابتدائي" loading="lazy" />
+  <figcaption>توزيع الطلاب المختبرين على مستويات الأداء للصف الثالث الابتدائي</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-02.png" alt="نسبة الإتقان في القراءة بين الأعوام (الصف الثالث الابتدائي)" loading="lazy" />
+  <figcaption>نسبة الإتقان في القراءة بين الأعوام (الصف الثالث الابتدائي)</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-03.png" alt="المجالات الفرعية في القراءة (الصف الثالث الابتدائي): المدرسة مقابل الإدارة والمملكة" loading="lazy" />
+  <figcaption>المجالات الفرعية في القراءة (الصف الثالث الابتدائي): المدرسة مقابل الإدارة والمملكة</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-04.png" alt="نسبة الإتقان في الرياضيات بين الأعوام (الصف الثالث الابتدائي)" loading="lazy" />
+  <figcaption>نسبة الإتقان في الرياضيات بين الأعوام (الصف الثالث الابتدائي)</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-05.png" alt="المجالات الفرعية في الرياضيات (الصف الثالث الابتدائي): المدرسة مقابل الإدارة والمملكة" loading="lazy" />
+  <figcaption>المجالات الفرعية في الرياضيات (الصف الثالث الابتدائي): المدرسة مقابل الإدارة والمملكة</figcaption>
+</figure></div>
+
+      <h3 style="margin-top:1.5rem">الصف السادس الابتدائي (مختبرون 35 من 48 — مشاركة 72.9%)</h3>
+      <div class="stat-row">
+        <div class="stat"><div class="n">37.1%</div><div class="label">إتقان المجالات الثلاثة</div><div class="delta-up ui">▲ +3.2 نقطة</div></div>
+        <div class="stat"><div class="n">74.3%</div><div class="label">رياضيات — قوة</div><div class="delta-up ui">▲ +23.5 نقطة · راقب الهندسة 48.6%</div></div>
+        <div class="stat"><div class="n">45.7%</div><div class="label">علوم فيزيائية/كيميائية — أولوية</div><div class="delta-down ui">علوم عامة 60% (−14.6)</div></div>
+        <div class="stat"><div class="n">57.1%</div><div class="label">قراءة</div><div class="muted">منخفض جداً 28.6%</div></div>
+      </div>
+      <h4 class="ui" style="margin:1.2rem 0 .4rem">رسوم الصف السادس من بطاقة نافس</h4>
+      <div class="chart-grid">
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-06.png" alt="توزيع الطلاب المختبرين على مستويات الأداء للصف السادس الابتدائي" loading="lazy" />
+  <figcaption>توزيع الطلاب المختبرين على مستويات الأداء للصف السادس الابتدائي</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-07.png" alt="نسبة الإتقان في الرياضيات بين الأعوام (الصف السادس الابتدائي)" loading="lazy" />
+  <figcaption>نسبة الإتقان في الرياضيات بين الأعوام (الصف السادس الابتدائي)</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-08.png" alt="المجالات الفرعية في الرياضيات (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة" loading="lazy" />
+  <figcaption>المجالات الفرعية في الرياضيات (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-09.png" alt="نسبة الإتقان في العلوم بين الأعوام (الصف السادس الابتدائي)" loading="lazy" />
+  <figcaption>نسبة الإتقان في العلوم بين الأعوام (الصف السادس الابتدائي)</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-10.png" alt="المجالات الفرعية في العلوم (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة" loading="lazy" />
+  <figcaption>المجالات الفرعية في العلوم (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-11.png" alt="نسبة الإتقان في القراءة بين الأعوام (الصف السادس الابتدائي)" loading="lazy" />
+  <figcaption>نسبة الإتقان في القراءة بين الأعوام (الصف السادس الابتدائي)</figcaption>
+</figure>
+<figure class="nafs-chart">
+  <img src="nafs-charts/chart-12.png" alt="المجالات الفرعية في القراءة (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة" loading="lazy" />
+  <figcaption>المجالات الفرعية في القراءة (الصف السادس الابتدائي): المدرسة مقابل الإدارة والمملكة</figcaption>
+</figure></div>
+
+      <h3 style="margin-top:1.25rem">ما تكشفه النتائج</h3>
+      <div class="findings"><article class="finding alert"><h4>انخفاض حاد في نسبة الإتقان في القراءة</h4><p>انخفضت نسبة الطلاب الذين بلغوا الحد الأدنى للإتقان في القراءة بالصف الثالث الابتدائي من 48.9% إلى 17.5% (-31.4 نقطة). يوصى بمقارنة هذه الدفعة بسابقتها ومعرفة ما تغيّر.</p></article><article class="finding warn"><h4>نسبة مرتفعة في المستوى «منخفض جدًا» في القراءة</h4><p>يقع 35% من طلاب الصف الثالث الابتدائي في المستوى «منخفض جدًا» في القراءة؛ وهؤلاء بحاجة إلى دعم فردي منتظم.</p></article><article class="finding warn"><h4>انخفاض حاد في نسبة الإتقان في العلوم</h4><p>انخفضت نسبة الطلاب الذين بلغوا الحد الأدنى للإتقان في العلوم بالصف السادس الابتدائي من 74.6% إلى 60% (-14.6 نقطة). يوصى بمقارنة هذه الدفعة بسابقتها ومعرفة ما تغيّر.</p></article><article class="finding warn"><h4>نسبة مرتفعة في المستوى «منخفض جدًا» في القراءة</h4><p>يقع 28.6% من طلاب الصف السادس الابتدائي في المستوى «منخفض جدًا» في القراءة؛ وهؤلاء بحاجة إلى دعم فردي منتظم.</p></article><article class="finding warn"><h4>مجال فرعي أقل من المتوسطين: العلوم الفيزيائية والكيميائية</h4><p>في مجال «العلوم الفيزيائية والكيميائية» (العلوم، الصف السادس الابتدائي) بلغت نسبة المدرسة 45.7%، وهي أقل من متوسط إدارة التعليم (56.3%) ومن متوسط المملكة (50.5%).</p></article><article class="finding info"><h4>أضعف المجالات الفرعية في الرياضيات: الأعداد والعمليات عليها</h4><p>أضعف المجالات الفرعية في الرياضيات بالصف الثالث الابتدائي هو «الأعداد والعمليات عليها» بنسبة 35%، ويبعد عن أقوى مجال فرعي بنحو 35 نقطة.</p></article><article class="finding info"><h4>أضعف المجالات الفرعية في الرياضيات: الهندسة والقياس</h4><p>أضعف المجالات الفرعية في الرياضيات بالصف السادس الابتدائي هو «الهندسة والقياس» بنسبة 48.6%، ويبعد عن أقوى مجال فرعي بنحو 34.3 نقطة.</p></article><article class="finding info"><h4>أضعف المجالات الفرعية في العلوم: العلوم الفيزيائية والكيميائية</h4><p>أضعف المجالات الفرعية في العلوم بالصف السادس الابتدائي هو «العلوم الفيزيائية والكيميائية» بنسبة 45.7%، ويبعد عن أقوى مجال فرعي بنحو 25.7 نقطة.</p></article><article class="finding good"><h4>تحسن ملحوظ في الرياضيات</h4><p>ارتفعت نسبة الإتقان في الرياضيات بالصف السادس الابتدائي من 50.8% إلى 74.3% (+23.5 نقطة). يُنصح بتوثيق ما أسهم في هذا التحسن وتعميمه.</p></article></div>
+
+      <div class="table-wrap" style="margin-top:1rem">
+      <table class="data">
+        <thead><tr><th>الصف</th><th>المهارة ذات الأولوية</th><th>النسبة</th><th>اتجاه التدخل</th></tr></thead>
+        <tbody>
+          <tr><td>ثالث</td><td>استيعاب المقروء</td><td>25%</td><td>تدخل علاجي مكثف + حصص بصمة</td></tr>
+          <tr><td>ثالث</td><td>الأعداد والعمليات / الهندسة</td><td>35% / 37.5%</td><td>مجموعات مرنة أسبوعية</td></tr>
+          <tr><td>سادس</td><td>العلوم الفيزيائية والكيميائية</td><td>45.7%</td><td>إعادة تدريس + استقصاء مصغّر</td></tr>
+          <tr><td>سادس</td><td>الهندسة والقياس</td><td>48.6%</td><td>تمثيلات متعددة وحل مسائل</td></tr>
+          <tr><td>سادس</td><td>شريحة منخفض جداً في القراءة</td><td>28.6%</td><td>تدخل فردي ومتابعة أسرية</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="elements" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">الخطة التنفيذية</p>
+        <h2>عناصر الخطة ومعايير الجودة</h2>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">عنصر الخطة</span><strong>هوية الخطة ونطاقها</strong></div><div><span class="lbl">دورية المراجعة</span><strong>بداية العام ومراجعة فصلية</strong></div></div>
+        <div class="body">تحديد الصفوف والمجالات المستهدفة، خط الأساس من بطاقة نافس، الربط بالخطة التشغيلية، واعتماد مسارات التقارير وأرشفة الشواهد.</div>
+        <div class="foot ui"><div><strong>الجهة المنفذة:</strong> مدير المدرسة وفريق التحسين</div><div><strong>المساندة:</strong> اللجان ذات العلاقة</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">عنصر الخطة</span><strong>منهجية التشخيص وتحليل البيانات</strong></div><div><span class="lbl">دورية المراجعة</span><strong>بعد كل قياس</strong></div></div>
+        <div class="body">تجميع نتائج نافس والاختبارات المدرسية والمحاكيات في قاعدة موحّدة، وتحليل الأداء بالمجال والمهارة والصف والطالب، وتحديد الأسباب الجذرية القابلة للتدخل.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> منسق نافس وفرق المواد</div><div><strong>المساندة:</strong> وكيل الشؤون التعليمية</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">عنصر الخطة</span><strong>مصفوفة الأولويات والأهداف الذكية</strong></div><div><span class="lbl">دورية المراجعة</span><strong>شهرياً</strong></div></div>
+        <div class="body">ترتيب المهارات بحجم الفجوة وعدد الطلاب المتأثرين. أهداف مبدئية: رفع إتقان الثالث المشترك فوق خط الأساس الحالي (10%)، ورفع إتقان العلوم الفيزيائية/الكيميائية للسادس فوق 45.7%، وتقليص شريحة منخفض جداً في قراءة السادس.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> فريق التحسين</div><div><strong>المساندة:</strong> معلمو المواد</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">عنصر الخطة</span><strong>نموذج التدخلات المتدرجة</strong></div><div><span class="lbl">دورية المراجعة</span><strong>طوال العام</strong></div></div>
+        <div class="body">مستوى 1: تحسين التدريس للجميع. مستوى 2: مجموعات مرنة للطلاب ذوي الفجوات مع قياس أسبوعي. مستوى 3: تدخل فردي مكثف وخطة أسرية عند استمرار الفجوة.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> معلمو المواد والموجه الطلابي</div><div><strong>المساندة:</strong> الأسرة ووكيل المدرسة</div></div>
+      </div>
+    </section>
+
+    <section id="initiatives" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">التنفيذ</p>
+        <h2>المبادرات التنفيذية والمخاطر</h2>
+      </div>
+
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">المبادرة</span><strong>حصص مسجلة للمهارات الأساسية — برنامج «بصمة»</strong></div><div><span class="lbl">زمن التنفيذ</span><strong>مستمر / عند التحويل عن بعد</strong></div></div>
+        <div class="body">توفير محتوى مسجّل للمهارات ذات الأولوية لضمان استمرارية الدعم عند الدراسة عن بعد أو ضغط الجدول.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> معلمو المواد وقائد النشاط</div><div><strong>المساندة:</strong> وكيل الشؤون التعليمية</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">المبادرة</span><strong>تحفيز وتكريم المتفاعلين مع الاختبارات التجريبية</strong></div><div><span class="lbl">زمن التنفيذ</span><strong>بعد كل تجريبي / ماهرون</strong></div></div>
+        <div class="body">تكريم الطلاب الأكثر التزاماً وتفاعلاً لرفع الدافعية ومعالجة ضعف اهتمام الأسرة بالاختبارات.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> الموجه الطلابي وقائد النشاط</div><div><strong>المساندة:</strong> منسق نافس</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">المبادرة</span><strong>تفريغ معلمي المواد المستهدفة</strong></div><div><span class="lbl">زمن التنفيذ</span><strong>أسبوعياً حسب الجدول</strong></div></div>
+        <div class="body">تخفيف ضغط الجدول الدراسي عبر تفريغ جزئي لمعلمي القراءة والرياضيات والعلوم لتنفيذ التدخلات وتحليل النتائج.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> مدير المدرسة ووكيل الشؤون التعليمية</div><div><strong>المساندة:</strong> وكيل شؤون الطلاب</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">المبادرة</span><strong>تدوير المعلمين بين الصفوف المستهدفة</strong></div><div><span class="lbl">زمن التنفيذ</span><strong>الفصل الأول</strong></div></div>
+        <div class="body">تبادل الخبرات ومعالجة ضعف تفاعل بعض المعلمين مع اختبارات نافس عبر تدوير منظم بين صفوف الثالث والسادس.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> وكيل الشؤون التعليمية</div><div><strong>المساندة:</strong> معلمو المواد</div></div>
+      </div>
+      <div class="initiative">
+        <div class="top ui"><div><span class="lbl">المبادرة</span><strong>التقويم التكويني الأسبوعي والمحاكيات</strong></div><div><span class="lbl">زمن التنفيذ</span><strong>أسبوعياً + أسابيع 7 و11 و16</strong></div></div>
+        <div class="body">قياسات قصيرة يوم التدريب، وتثبيت اختبارات ماهرون المركزي وفق خطة التدريب، مع تحليل فقرات خلال 3 أيام.</div>
+        <div class="foot ui"><div><strong>المنفذ:</strong> معلمو المواد ومنسق الاختبار</div><div><strong>المساندة:</strong> منسق نافس</div></div>
+      </div>
+
+      <h3>سجل المخاطر والحلول</h3>
+      <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>المخاطر</th><th>الحل / الإجراء البديل</th><th>المسؤول</th></tr></thead>
+        <tbody>
+          <tr><td>تحويل الدراسة عن بعد</td><td>حصص مسجلة عبر برنامج بصمة</td><td>معلمو المواد</td></tr>
+          <tr><td>ضعف اهتمام أولياء الأمور بالاختبارات</td><td>تحفيز وتكريم المتفاعلين + تواصل أسري</td><td>الموجه / رائد النشاط</td></tr>
+          <tr><td>ضغط الجدول على المعلمين المستهدفين</td><td>تفريغ معلمي المواد المستهدفة</td><td>الإدارة</td></tr>
+          <tr><td>ضعف تفاعل بعض المعلمين مع نافس</td><td>تدوير المعلمين بين الصفوف المستهدفة</td><td>وكيل الشؤون التعليمية</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="schedules" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">الفصل الأول 1448هـ</p>
+        <h2>جداول التدريب الأسبوعية بأسماء المؤشرات</h2>
+        <p>مأخوذة من خطط التدريب المعتمدة، مع استبدال الأرقام بأسماء المنصة (المؤشر / ناتج التعلم).</p>
+      </div>
+      
+<div class="panel" id="sched-r3">
+  <h3>قراءة 3ب</h3>
+  <p class="muted">الصف الثالث الابتدائي — مجال القراءة</p>
+  <div class="table-wrap">
+  <table class="data">
+    <thead><tr><th>الأسبوع</th><th>التاريخ</th><th>اسم المؤشر / الناتج</th><th>نوع النشاط</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td>10/3 – 14/3</td><td>اختبار تشخيصي مركزي</td><td>تشخيصي</td></tr>
+<tr><td>2</td><td>17/3 – 21/3</td><td>المؤشر الأول</td><td>تدريب</td></tr>
+<tr><td>3</td><td>24/3 – 28/3</td><td>المؤشر الثاني</td><td>تدريب</td></tr>
+<tr><td>4</td><td>2/4 – 6/4</td><td>المؤشر الثالث</td><td>تدريب</td></tr>
+<tr><td>5</td><td>9/4 – 13/4</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>6</td><td>16/4 – 20/4</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>7</td><td>23/4 – 27/4</td><td>ماهرون المركزي (1)</td><td>ماهرون</td></tr>
+<tr><td>8</td><td>30/4 – 4/5</td><td>المؤشر الرابع</td><td>تدريب</td></tr>
+<tr><td>9</td><td>7/5 – 11/5</td><td>المؤشر الخامس</td><td>تدريب</td></tr>
+<tr><td>10</td><td>14/5 – 18/5</td><td>المؤشر السادس</td><td>تدريب</td></tr>
+<tr><td>11</td><td>21/5 – 25/5</td><td>ماهرون المركزي (2)</td><td>ماهرون</td></tr>
+<tr><td>12</td><td>28/5 – 2/6</td><td>المؤشر السابع</td><td>تدريب</td></tr>
+<tr><td>13</td><td>5/6 – 9/6</td><td>المؤشر الثامن</td><td>تدريب</td></tr>
+<tr><td>14</td><td>19/6 – 23/6</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>15</td><td>26/6 – 1/7</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>16</td><td>4/7 – 8/7</td><td>ماهرون المركزي (3)</td><td>ماهرون</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="panel" id="sched-m3">
+  <h3>رياضيات 3ب</h3>
+  <p class="muted">الصف الثالث الابتدائي — مجال الرياضيات</p>
+  <div class="table-wrap">
+  <table class="data">
+    <thead><tr><th>الأسبوع</th><th>التاريخ</th><th>اسم المؤشر / الناتج</th><th>نوع النشاط</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td>10/3 – 14/3</td><td>اختبار تشخيصي مركزي</td><td>تشخيصي</td></tr>
+<tr><td>2</td><td>17/3 – 21/3</td><td>ناتج التعلم الحادي عشر</td><td>تدريب</td></tr>
+<tr><td>3</td><td>24/3 – 28/3</td><td>ناتج التعلم الخامس</td><td>تدريب</td></tr>
+<tr><td>4</td><td>2/4 – 6/4</td><td>ناتج التعلم الأول</td><td>تدريب</td></tr>
+<tr><td>5</td><td>9/4 – 13/4</td><td>ناتج التعلم الثاني عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>6</td><td>16/4 – 20/4</td><td>ناتج التعلم الثاني عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>7</td><td>23/4 – 27/4</td><td>ماهرون المركزي (1)</td><td>ماهرون</td></tr>
+<tr><td>8</td><td>30/4 – 4/5</td><td>ناتج التعلم الثاني</td><td>تدريب</td></tr>
+<tr><td>9</td><td>7/5 – 11/5</td><td>ناتج التعلم الثاني</td><td>تدريب</td></tr>
+<tr><td>10</td><td>14/5 – 18/5</td><td>ناتج التعلم الثامن</td><td>تدريب</td></tr>
+<tr><td>11</td><td>21/5 – 25/5</td><td>ماهرون المركزي (2)</td><td>ماهرون</td></tr>
+<tr><td>12</td><td>28/5 – 2/6</td><td>ناتج التعلم الثالث</td><td>تدريب</td></tr>
+<tr><td>13</td><td>5/6 – 9/6</td><td>ناتج التعلم التاسع</td><td>تدريب</td></tr>
+<tr><td>14</td><td>19/6 – 23/6</td><td>ناتج التعلم الثالث عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>15</td><td>26/6 – 1/7</td><td>ناتج التعلم الرابع، ناتج التعلم السادس</td><td>تدريب / تجريبي</td></tr>
+<tr><td>16</td><td>4/7 – 8/7</td><td>ماهرون المركزي (3)</td><td>ماهرون</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="panel" id="sched-r6">
+  <h3>قراءة 6ب</h3>
+  <p class="muted">الصف السادس الابتدائي — مجال القراءة</p>
+  <div class="table-wrap">
+  <table class="data">
+    <thead><tr><th>الأسبوع</th><th>التاريخ</th><th>اسم المؤشر / الناتج</th><th>نوع النشاط</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td>10/3 – 14/3</td><td>اختبار تشخيصي مركزي</td><td>تشخيصي</td></tr>
+<tr><td>2</td><td>17/3 – 21/3</td><td>المؤشر الأول</td><td>تدريب</td></tr>
+<tr><td>3</td><td>24/3 – 28/3</td><td>المؤشر الثاني</td><td>تدريب</td></tr>
+<tr><td>4</td><td>2/4 – 6/4</td><td>المؤشر الثالث</td><td>تدريب</td></tr>
+<tr><td>5</td><td>9/4 – 13/4</td><td>المؤشر الرابع</td><td>تدريب / تجريبي</td></tr>
+<tr><td>6</td><td>16/4 – 20/4</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>7</td><td>23/4 – 27/4</td><td>ماهرون المركزي (1)</td><td>ماهرون</td></tr>
+<tr><td>8</td><td>30/4 – 4/5</td><td>المؤشر الخامس</td><td>تدريب</td></tr>
+<tr><td>9</td><td>7/5 – 11/5</td><td>المؤشر السادس</td><td>تدريب</td></tr>
+<tr><td>10</td><td>14/5 – 18/5</td><td>المؤشر السابع</td><td>تدريب</td></tr>
+<tr><td>11</td><td>21/5 – 25/5</td><td>ماهرون المركزي (2)</td><td>ماهرون</td></tr>
+<tr><td>12</td><td>28/5 – 2/6</td><td>المؤشر الثامن</td><td>تدريب</td></tr>
+<tr><td>13</td><td>5/6 – 9/6</td><td>المؤشر التاسع</td><td>تدريب</td></tr>
+<tr><td>14</td><td>19/6 – 23/6</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>15</td><td>26/6 – 1/7</td><td>تجريبي</td><td>تجريبي</td></tr>
+<tr><td>16</td><td>4/7 – 8/7</td><td>ماهرون المركزي (3)</td><td>ماهرون</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="panel" id="sched-m6">
+  <h3>رياضيات 6ب</h3>
+  <p class="muted">الصف السادس الابتدائي — مجال الرياضيات</p>
+  <div class="table-wrap">
+  <table class="data">
+    <thead><tr><th>الأسبوع</th><th>التاريخ</th><th>اسم المؤشر / الناتج</th><th>نوع النشاط</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td>10/3 – 14/3</td><td>اختبار تشخيصي مركزي</td><td>تشخيصي</td></tr>
+<tr><td>2</td><td>17/3 – 21/3</td><td>ناتج التعلم الأول، ناتج التعلم السادس</td><td>تدريب</td></tr>
+<tr><td>3</td><td>24/3 – 28/3</td><td>ناتج التعلم الحادي عشر</td><td>تدريب</td></tr>
+<tr><td>4</td><td>2/4 – 6/4</td><td>ناتج التعلم الثاني عشر</td><td>تدريب</td></tr>
+<tr><td>5</td><td>9/4 – 13/4</td><td>ناتج التعلم التاسع عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>6</td><td>16/4 – 20/4</td><td>ناتج التعلم العشرون</td><td>تدريب / تجريبي</td></tr>
+<tr><td>7</td><td>23/4 – 27/4</td><td>ناتج التعلم الثالث + ماهرون المركزي (1)</td><td>ماهرون</td></tr>
+<tr><td>8</td><td>30/4 – 4/5</td><td>ناتج التعلم العاشر</td><td>تدريب</td></tr>
+<tr><td>9</td><td>7/5 – 11/5</td><td>ناتج التعلم الرابع</td><td>تدريب</td></tr>
+<tr><td>10</td><td>14/5 – 18/5</td><td>ناتج التعلم التاسع</td><td>تدريب</td></tr>
+<tr><td>11</td><td>21/5 – 25/5</td><td>ماهرون المركزي (2)</td><td>ماهرون</td></tr>
+<tr><td>12</td><td>28/5 – 2/6</td><td>ناتج التعلم الثالث</td><td>تدريب</td></tr>
+<tr><td>13</td><td>5/6 – 9/6</td><td>ناتج التعلم التاسع</td><td>تدريب</td></tr>
+<tr><td>14</td><td>19/6 – 23/6</td><td>ناتج التعلم الثالث عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>15</td><td>26/6 – 1/7</td><td>ناتج التعلم السادس، ناتج التعلم الرابع</td><td>تدريب / تجريبي</td></tr>
+<tr><td>16</td><td>4/7 – 8/7</td><td>ماهرون المركزي (3)</td><td>ماهرون</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="panel" id="sched-s6">
+  <h3>علوم 6ب</h3>
+  <p class="muted">الصف السادس الابتدائي — مجال العلوم</p>
+  <div class="table-wrap">
+  <table class="data">
+    <thead><tr><th>الأسبوع</th><th>التاريخ</th><th>اسم المؤشر / الناتج</th><th>نوع النشاط</th></tr></thead>
+    <tbody>
+    <tr><td>1</td><td>10/3 – 14/3</td><td>اختبار تشخيصي مركزي</td><td>تشخيصي</td></tr>
+<tr><td>2</td><td>17/3 – 21/3</td><td>ناتج التعلم الأول، ناتج التعلم التاسع عشر</td><td>تدريب</td></tr>
+<tr><td>3</td><td>24/3 – 28/3</td><td>ناتج التعلم الثاني</td><td>تدريب</td></tr>
+<tr><td>4</td><td>2/4 – 6/4</td><td>ناتج التعلم العشرون</td><td>تدريب</td></tr>
+<tr><td>5</td><td>9/4 – 13/4</td><td>ناتج التعلم العشرون، ناتج التعلم الحادي عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>6</td><td>16/4 – 20/4</td><td>ناتج التعلم العشرون، ناتج التعلم الحادي عشر</td><td>تدريب / تجريبي</td></tr>
+<tr><td>7</td><td>23/4 – 27/4</td><td>ناتج التعلم الثالث، ناتج التعلم الواحد وعشرون + ماهرون المركزي (1)</td><td>ماهرون</td></tr>
+<tr><td>8</td><td>30/4 – 4/5</td><td>ناتج التعلم الواحد وعشرون، ناتج التعلم الخامس، ناتج التعلم الرابع</td><td>تدريب</td></tr>
+<tr><td>9</td><td>7/5 – 11/5</td><td>ناتج التعلم الخامس، ناتج التعلم الرابع</td><td>تدريب</td></tr>
+<tr><td>10</td><td>14/5 – 18/5</td><td>ناتج التعلم الثالث</td><td>تدريب</td></tr>
+<tr><td>11</td><td>21/5 – 25/5</td><td>ناتج التعلم الثالث، ناتج التعلم التاسع وعشرون + ماهرون المركزي (2)</td><td>ماهرون</td></tr>
+<tr><td>12</td><td>28/5 – 2/6</td><td>ناتج التعلم التاسع وعشرون، ناتج التعلم الثامن، ناتج التعلم السادس</td><td>تدريب</td></tr>
+<tr><td>13</td><td>5/6 – 9/6</td><td>ناتج التعلم التاسع، ناتج التعلم الثلاثون، ناتج التعلم السابع</td><td>تدريب</td></tr>
+<tr><td>14</td><td>19/6 – 23/6</td><td>ناتج التعلم العاشر، ناتج التعلم الواحد والثلاتون</td><td>تدريب / تجريبي</td></tr>
+<tr><td>15</td><td>26/6 – 1/7</td><td>ناتج التعلم العاشر، ناتج التعلم الثاني والثلاثون</td><td>تدريب / تجريبي</td></tr>
+<tr><td>16</td><td>4/7 – 8/7</td><td>ناتج التعلم العاشر، ناتج التعلم الثالث والثلاثون + ماهرون المركزي (3)</td><td>ماهرون</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+    </section>
+
+    
+<section id="bank-r3" class="section">
+  <div class="section-head">
+    <p class="eyebrow">بنك الأسئلة</p>
+    <h2>قراءة 3ب</h2>
+    <p>مؤشرات المنصة مع روابط الاختبارات والموارد. يُستكمل نص كل سؤال لاحقاً من النماذج المرتبطة.</p>
+  </div>
+  <div class="bank-grid">
+  
+<article class="bank-card">
+  <header><span class="badge">1</span><h3>المؤشر الأول</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1zKbZSB1iFeLRGnPJKHLS3ngXrhZVAgT3/view" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1lhXZVhIe8msQNpxGbabH9XLJKCfzLOZL/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1g-bJ8Bbh21sb_JO7xtZi4BvYaockgGph/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">2</span><h3>المؤشر الثاني</h3></header>
+  <p class="meta">الأسابيع: 3</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1SoBkWYP1V8aZqlf_KPkCMCeuIl_TUk1w/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1_aaD67XbI35PMrSmE4rz3uw-EU0nyxTg/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">3</span><h3>المؤشر الثالث</h3></header>
+  <p class="meta">الأسابيع: 4</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/14l3Zxo2gFvFQObuG_qCymuc_ZXdJlEtz/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1JnC3L_5qjrp01yZgNq5i721tpFOkuITD/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">4</span><h3>المؤشر الرابع</h3></header>
+  <p class="meta">الأسابيع: 8</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/11-q3Uozmi62wfa-1n7ytPm_O5GbOR8mx/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ZhvANB45kX13MDga0VimkPUCoYa8o4Dh/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">5</span><h3>المؤشر الخامس</h3></header>
+  <p class="meta">الأسابيع: 9</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1R-P0c6nq_ZA1aneVivMaJkJkWnK1ojbK/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1vMRJs4FyNhY6UU-nx8VAsIWmFVjJPUfd/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">6</span><h3>المؤشر السادس</h3></header>
+  <p class="meta">الأسابيع: 10</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1O66TvLRa3JphlgemhGkxbHZtEFxlOIUq/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1cA7picjysck3trhW2lBtgf_Gwa397Mn2/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">7</span><h3>المؤشر السابع</h3></header>
+  <p class="meta">الأسابيع: 12</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1MEJZwO4nK40f3lmV1I8_CMCY4Hm9zzMd/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ggsX3p5aZVlSebw1qn3FUK6X243KMmge/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">8</span><h3>المؤشر الثامن</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1XNb-MLMDCIEARLfu9ZkFWib0FIzED3wE/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ydiZndAoxR6_6is4Xxz6aVzWVefV034Z/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">9</span><h3>المؤشر التاسع</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1oFSsgZTmb44xhbZS6mcOMSpWvWNMkmh3/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1maYyT2Ju-CURVZ04WNpHRX35C6XFvDxJ/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">10</span><h3>المؤشر الثالث عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1NOw3bKIBZTEtjN8jTeCY3e_4xz_JAp3Y/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Pl6VT6iJK0uhQiNeh2liFtVW4y9i3H2P/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">11</span><h3>المؤشر الثاني عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1mOcyl7OBkM8YMRSaW8obsDqOmG3Wzsjo/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/13adGOawCLXd-VEiqK4_dBeIV82szitMl/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">12</span><h3>المؤشر الحادي عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1I-floW9w2_xCTL2Tjn2NCFVi9gMHkaxg/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1MNbvcekuIdxsi89h_VVrhMCv8EU0Gw76/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">13</span><h3>المؤشر العاشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/file/d/1LUbpuvsXaDR-QuWrx46hPRysrD3Mkztz/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Okil8Kqn6CPjYLl2S2QzOLwZvrIjdoT8/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://silver-lamington-8b7be3.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+  </div>
+</section>
+
+<section id="bank-m3" class="section">
+  <div class="section-head">
+    <p class="eyebrow">بنك الأسئلة</p>
+    <h2>رياضيات 3ب</h2>
+    <p>مؤشرات المنصة مع روابط الاختبارات والموارد. يُستكمل نص كل سؤال لاحقاً من النماذج المرتبطة.</p>
+  </div>
+  <div class="bank-grid">
+  
+<article class="bank-card">
+  <header><span class="badge">1</span><h3>ناتج التعلم الحادي عشر</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWO-wF3hjMt1MgEqJ0mz9EiVUOVY2NE1TWkJKMFRaQjMxVDFEMks0RFQzNSQlQCNjPTEu&amp;sharetoken=GDqZUWWifumJNiUyjw4K" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/18mKiodFaW8zEn9tq6j6CQD7TkMU5rfMO/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFDkdm6WWYdPAtTQRHpRhAKb&amp;si=uT1ObZ5kcOeCKPI5" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1hUMlI568qYUyYxxTBZaZFqADQhBrTKi7/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1idFE49Fs-N_pHr7rQTlzypC1fLDbnhaV" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">2</span><h3>ناتج التعلم الخامس</h3></header>
+  <p class="meta">الأسابيع: 3</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagH2PkCXLVkdGjqM95ENMpQJUNk5BUVc5WVowRzlXUk41WVA4Uk1WRTI3Ri4u&amp;sharetoken=iDuJmBNdVFG3Do0IKXtR" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Bm8lFV1WN9z6Ru6ehNlemHECxKisOryC/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFD_lZsVkbBJDmAY2Hzp_QEr&amp;si=jf-7U4cGkTZFkA20" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/15oZhsIz7Cts3hct15_k8z5VVlA_7s1e4/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/12n6nSlJ-Pq31JL3rpdG-tYIi1e3xI9DU" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">3</span><h3>ناتج التعلم الأول</h3></header>
+  <p class="meta">الأسابيع: 4</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagH2PkCXLVkdGjqM95ENMpQJUODQ5M1VFSzdDUjdZTjRUOENWRFM2OFY3Vi4u&amp;sharetoken=iDuJmBNdVFG3Do0IKXtR" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1R1DdNSLdyZEyBN2lvU1VdWuasl1mm6_h/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFDMXWLSintE3iQOzl563o6d&amp;si=YcAsjZ5EWGydelHA" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/19gzOMFcRP-nIInxvPqjMuTU_b3EjDgdX/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/16BjrDIuoSHb-kqrdJ_UGK4i0RelFRMTv" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">4</span><h3>ناتج التعلم الثاني عشر</h3></header>
+  <p class="meta">الأسابيع: 5، 6</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWO-wF3hjMt1MgEqJ0mz9EiVUQkhSMEs4M1RYUUVaRThRMlg0M0k5SlRVSCQlQCNjPTEu&amp;sharetoken=YtjNTrPbwwvoFcU4buYa" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1FB562dDjK7TblmRJfCX6m01eqcF-M3fj/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFDFeIu92LadmE5xsDIK2EYn&amp;si=_EhAo-NXN6YYDsNF" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1eVwaLzSj3UjgNC065ryZdN9L04mQs0Re/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1KF1IMwcT1aolntAHUvsuue4xFwDynSa6" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">5</span><h3>ناتج التعلم الثاني</h3></header>
+  <p class="meta">الأسابيع: 8، 9</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagH2PkCXLVkdGjqM95ENMpQJUNVQwNFo1UzkzUlpGMUNLWU5TUlI4T1k0SC4u&amp;sharetoken=iDuJmBNdVFG3Do0IKXtR" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1yY0JW9R0gWE9BNSL0LJU7RJQ2tPiKBhv/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFApjZDt7SaY18woEEpHHM-i&amp;si=QmjrujdfXN8tOJn5" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/11aOW-ZTadN3oYaPlLPy4fUOQ6MHyesug/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1YwCLQTHGC0YVJrRYppxK3Jrz2hklpj-l" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">6</span><h3>ناتج التعلم الثامن</h3></header>
+  <p class="meta">الأسابيع: 10</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWO-wF3hjMt1MgEqJ0mz9EiVUREg5VllYRVhIUVJWTDJRUUgxTzBPSTVTTSQlQCNjPTEu&amp;sharetoken=ok66tvEOnHTOuryQ9qyz" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1iF2xylj475mvx_KTW7YIVMzyyHM2nslW/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFBxx8l0qhVs6StQNu18jpAO&amp;si=8LQzY3jcR6SNaZtT" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1uPWkOoW7Ov4cts7gMxPxnQRDr5L-ulX7/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1RI0wGHManugNyPLueaMxpdG_iXeeGE1a" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">7</span><h3>ناتج التعلم الثالث</h3></header>
+  <p class="meta">الأسابيع: 12</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWMzVV6qAEuJMs4PN2mxIhphUMllFSEVYRDRBNjU3N0oyTzRCMDBHVFBQUi4u&amp;sharetoken=yXQIW8FZA0087uvew52h" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/12NwjFxuF1RuVzT7GeyIHJXTIjmoBCKic/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFDRR31ZEEdsncKRM23w6s_A&amp;si=xCaBrfc6KR7HFHdS" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1jyfTxSZGylJbQpaRU6NgjHr3hYAVA60Z/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1HVp5H2Lm9btuRWFRcjTYT5yu7ZnmJ0Mn" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">8</span><h3>ناتج التعلم التاسع</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vePWLBUQQRJEney64qcrLMBUNzE4Uk9OMTNKSllFR1RIWkFIRjdKVTc5RS4u&amp;sharetoken=DdkMLNjpODS3WViOi96v" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/100zWzr_TvKyc4uvqB-Hx1QQU0-eXqsy_/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFDfnQbFO6Qq2ip6UgoSy7_s&amp;si=5-oPYqIq2Ihuz075" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1bYJx-LLmiKz9IXbmBNPYHoZwEPKS6U89/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1XW69Cry9mdTQfg-fKlPYUbQ-TuavOYmK" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">9</span><h3>ناتج التعلم الثالث عشر</h3></header>
+  <p class="meta">الأسابيع: 14</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWMzVV6qAEuJMs4PN2mxIhphUQzZXU09SQllGSUtGMURQSU9LSEZaRVhTVS4u&amp;sharetoken=dlKzUleUXfIo0lCBMPKA" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1mpb3Ioc_4Hv2X7LX5EthXDyH4dSDfiNf/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFBFjE48zpAjxStGVHXvWmmQ&amp;si=pke5-ve5Yq5f74-z" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1hNCMWccsrADLR6F61M0qVjW8vZeOIg96/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1-EkpTfWQxOuo140Mdg91dR4JqrHMVG2m" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">10</span><h3>ناتج التعلم الرابع</h3></header>
+  <p class="meta">الأسابيع: 15</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagH2PkCXLVkdGjqM95ENMpQJURFU2N0wzR01YUktNV1lIRTM2T1FIMFFHRi4u&amp;sharetoken=iDuJmBNdVFG3Do0IKXtR" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1SBDlXosqtJjSXqUVA4ovp6YL8FPvZ0UD/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFBxOaBqQFisUqsPQGXzo9om&amp;si=aMHxAYpuo819xNu9" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/136ocfgjdlCnYbFE6-EU6hPj0Jf2zWSv7/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1RZytXDyPqQamv5dZNYSaIHWxowk1J0gk" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">11</span><h3>ناتج التعلم السادس</h3></header>
+  <p class="meta">الأسابيع: 15</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagH2PkCXLVkdGjqM95ENMpQJUNVdJQzdNVlNUS00wODdGNFE2UUU5QlRWUS4u&amp;sharetoken=iDuJmBNdVFG3Do0IKXtR" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/101mxyPLqAjjLqDdSBAD6w61D8UiDWXwL/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFApSZuIM28gZUs6w6Nbqpcp&amp;si=kPu3tIjEjP_ELYn1" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1oL6Q7fxg6zXOddWGrV5FOGudbWhtUemL/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1CcivuTUPN922vVRAxSanD25IM6_AilM1" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">12</span><h3>ناتج التعلم السابع</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__ixw_DRUOFFIOTFQMzlRM1ZPSUJOUjFPTzZPUlBaSC4u&amp;sharetoken=oHEIv5Xq3knPzRmGBZ5x" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1gXxmyaexv8WZ-6MvHpIuMGM3PieyEV8F/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFBRkr-FoItko29uU6zDwMoG&amp;si=ZRk46spBEaKhjD38" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1CdnAb1JXFMrRioJ-AW7hjNxTDJCpj45M/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1BzbYVKW-iFd--aTRJk8xbAdSN16Fll6G" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">13</span><h3>ناتج التعلم العاشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWO-wF3hjMt1MgEqJ0mz9EiVUQlg4MkhQSVNERzJVRFZHUVo5OUk5RERKRCQlQCNjPTEu&amp;sharetoken=NxAoWq4GgDOBxKqyfDbo" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/15cJcnob4xgOmJgKyTGuW2iUejMPWprtK/view" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://youtube.com/playlist?list=PLVK9orzViDFCzK2ic6K0RXjhQ6E8vGuH7&amp;si=iwX5gx-wiWWzG3sX" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/16zau7tNlimohzsWiatNQS6Q3eEZmpPKQ/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/drive/folders/1qbWd_AqT6sfAZj64OYNdmebxcVAjyY-6" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+  </div>
+</section>
+
+<section id="bank-r6" class="section">
+  <div class="section-head">
+    <p class="eyebrow">بنك الأسئلة</p>
+    <h2>قراءة 6ب</h2>
+    <p>مؤشرات المنصة مع روابط الاختبارات والموارد. يُستكمل نص كل سؤال لاحقاً من النماذج المرتبطة.</p>
+  </div>
+  <div class="bank-grid">
+  
+<article class="bank-card">
+  <header><span class="badge">1</span><h3>المؤشر الأول</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMlJSTVc4TkVOWUtWMk5aMEpDOVA0U0pLMC4u&amp;sharetoken=NXgjMX3yC8C6ONXLNViL" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1mLzqJi2UZq9xAhsNomB29AyYoDBXZCPX/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Uc-uatZEqtJXfARjtJf4NDLtwwbpWZft/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">2</span><h3>المؤشر الثاني</h3></header>
+  <p class="meta">الأسابيع: 3</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMlJSTVc4TkVOWUtWMk5aMEpDOVA0U0pLMC4u&amp;sharetoken=NXgjMX3yC8C6ONXLNViL" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/17MTZPCvkIcXhW_wyEAJDisxcPtm2FODI/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1AY8dMZor1x96nckK75QgZyPT2AIoPnaN/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">3</span><h3>المؤشر الثالث</h3></header>
+  <p class="meta">الأسابيع: 4</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUM01FWjBGSzJHQkdJNlI5SFBOOVVNMlZNNC4u&amp;sharetoken=uJ0lU5TPBsGWD9YILs8Y" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/167fds218DklX-5FAkJU8RGINk2KVnyYk/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1MbWNa1VdIWHfw8bzteU1GOTGUES6vKBF/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">4</span><h3>المؤشر الرابع</h3></header>
+  <p class="meta">الأسابيع: 5</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUM01FWjBGSzJHQkdJNlI5SFBOOVVNMlZNNC4u&amp;sharetoken=uJ0lU5TPBsGWD9YILs8Y" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1AzYGtU-1v36ynT043yhwOKyX7B2s5xEE/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1hr0Fme7-isNT0qJi1p9HKREEnhM-FYtS/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">5</span><h3>المؤشر الخامس</h3></header>
+  <p class="meta">الأسابيع: 8</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUNjdQSUJNSkQ4QlNXNlozMzNCUFIzMVJLOC4u&amp;sharetoken=2z0IHo6PZGGfdNrESaEY" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1FbxZ-1FSYdtc_Wo5VSCR_qx3hcT4zJJr/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/18xJeOX21MIyxu6imsHeKnMv8w-q1c2Bz/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">6</span><h3>المؤشر السادس</h3></header>
+  <p class="meta">الأسابيع: 9</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUM1daT1ZQODhKTTI3U1pVNFMzMVRDTjg0Ni4u&amp;sharetoken=1p2pkgHcgbTOyD5deU8O" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/13qI9s28ypvcwwgcntkGyn-FPiQHnWhtw/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1c2K5Ag_AM2ciEI8V4ESY3Zws0Uew3P0i/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">7</span><h3>المؤشر السابع</h3></header>
+  <p class="meta">الأسابيع: 10</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUM1daT1ZQODhKTTI3U1pVNFMzMVRDTjg0Ni4u&amp;sharetoken=1p2pkgHcgbTOyD5deU8O" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1lfIMIqMNI-ClO41Q6NWP-Q3o55OwzaXQ/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1zJ-adt2CvguyQEZf1sKviaGp2YZQmEvg/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">8</span><h3>المؤشر الثامن</h3></header>
+  <p class="meta">الأسابيع: 12</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUOEZXVFNHSkdRTEU1UVVSVzRDNlY2UEJIMi4u&amp;sharetoken=XCsErH0WOsWKDYKlHami" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1uJJwpS07ICYPvnFpl4Wl-aGJw61FSxcm/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1VN3RfRp7Qnw9N3BUaORhA7Sk-c_ZHJC5/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">9</span><h3>المؤشر التاسع</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWLqNTtcuqP9BuD4iNWtQ6ZpUOEZXVFNHSkdRTEU1UVVSVzRDNlY2UEJIMi4u&amp;sharetoken=XCsErH0WOsWKDYKlHami" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Cwb4Zf5i2pRZu0q2-DOPp84NPGMZXz90/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/15enzsJoQZ0H_RtJ3FgJKbp7yn3fmOwJd/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">10</span><h3>المؤشر الثالث عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMUU1NERMUTBLOVQxS05BNE1KWTJSN0JOUC4u&amp;sharetoken=XDAs7k3mt9eUalqBCpVg" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1vKoVwnSIQq99hA8t6qUEy4KwXMp8IyTi/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1fOMdYHOTGixPUm4a2HYWEkB6jx8RRAEe/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">11</span><h3>المؤشر الثاني عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMUU1NERMUTBLOVQxS05BNE1KWTJSN0JOUC4u&amp;sharetoken=XDAs7k3mt9eUalqBCpVg" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1lBKMG4BuEcPWJaG5kPIYzzvpw4ocudtk/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ykeIcG2-MGVHdTlwaAVv1msU1JR0by0X/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">12</span><h3>المؤشر الحادي عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMUFNOUpXOUc1RDJHOU4xR0JLTkc3QVdDNy4u&amp;sharetoken=crjzvS5YQFsVHraOLH1U" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1pMsoMqSiKDI9dHYnMZn92C2Wa345zXQG/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1v8oBgLIO8GXJYMldNBaLe0VPrp4Tb6NV/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">13</span><h3>المؤشر الرابع عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMUU1NERMUTBLOVQxS05BNE1KWTJSN0JOUC4u&amp;sharetoken=XDAs7k3mt9eUalqBCpVg" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/133g_Mzdolkad7jzbbJNNOKfS1ZL2GmHG/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1FiBl8KZA4qBbyNoe5PqNil-7c7Mjqy_0/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">14</span><h3>المؤشر العاشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=UYPKa9MBUkKF6r2o-NI1vRxjAcu0G9NBkrW7vCsRV1NUMUFNOUpXOUc1RDJHOU4xR0JLTkc3QVdDNy4u&amp;sharetoken=crjzvS5YQFsVHraOLH1U" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1iS2PAyetf9TUVOXpSCwpcDL3i-tYp7xv/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1v5yJCQsWqW9SinYYapXtmevSRNv-zAhZ/view?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://jazzy-buttercream-8b59a6.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+  </div>
+</section>
+
+<section id="bank-m6" class="section">
+  <div class="section-head">
+    <p class="eyebrow">بنك الأسئلة</p>
+    <h2>رياضيات 6ب</h2>
+    <p>مؤشرات المنصة مع روابط الاختبارات والموارد. يُستكمل نص كل سؤال لاحقاً من النماذج المرتبطة.</p>
+  </div>
+  <div class="bank-grid">
+  
+<article class="bank-card">
+  <header><span class="badge">1</span><h3>ناتج التعلم الأول</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1Nbklkn1W5EDSlAqul8lxAso8_g-XZ4tX?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1RW83yJLwFR8SW8FIH8lxBELI9YTF9pjk/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1LTRVcp26QFXdLW5I_-0zTv7lFvv7JN0R?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/11-68YeTkEBxC0jQxsPhZ58TOBn_WEOqA/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1teVyprEoHq30xSY3QfHClW4jHU1vRIYQ/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">2</span><h3>ناتج التعلم السادس</h3></header>
+  <p class="meta">الأسابيع: 2، 15</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1Cpj80rnVe3UWOJL2u0Q-lJp8B1WIapfJ?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Uccz565iIkOcm42zR0tcxXsgvDCFQMFC/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1ZL3IFWANCLjVO48LA0ylGIIRygkjanZj?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1sjjQVA3jcKBzp6mDvBfqVelpLTJ5Niti/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1_Y9L3wGAUUBBzzO7PAVwrsyPE-IXbmG1/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">3</span><h3>ناتج التعلم الحادي عشر</h3></header>
+  <p class="meta">الأسابيع: 3</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1MjGuRhIkkCo0q9SyVc-hP0JOmZ7UfWy-?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1NX3YYxc2j557iVANk72uASQbdpm0URYu/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1hKol6E8DPAlXwnUqrWv0paO7NUzldnCL?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1qERZo4IrAIs4c-RbvHswsog8JSqbeYVN/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1k-X-ywgK2WR_ypqeCIu8vG63NHLfjhSZ/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">4</span><h3>ناتج التعلم الثاني عشر</h3></header>
+  <p class="meta">الأسابيع: 4</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1hEQ2vArkmvVPz_JUfwSgt7AkxD-ihC7A?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1LPtgtFayO6pnk26VWPLTYjDgd2KJLBfP/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1KGq-N8tWlfjP93247yfPB_SgZxukbNzE?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1Kk3kIgrvThH3QONLEufVXre7WJbGOe5r/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1rTmZegqLKRar0nmC5PvB82w-muIWQk8l/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">5</span><h3>ناتج التعلم التاسع عشر</h3></header>
+  <p class="meta">الأسابيع: 5</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1zjItulZwli4ju1Wpy7Hzy95-YTZUG2vO?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1qE3JfPgIyao3VLCPTbeU611BbsWHmPE9/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1wRz4k10fWnBeU_arP3cQDjsQRoZwhOvB?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1fnjmRw6DUsRPBtsh7toxxaq9ERZBNtn0/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1AhwHHF3WC2ZbwKCnjH2CfSOCv2Tz5IZ_/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">6</span><h3>ناتج التعلم العشرون</h3></header>
+  <p class="meta">الأسابيع: 6</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1gcxW2FDjB76a_t-lDiEMziR1c17e4Rhg?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1ngUha49ms1Rb-iFLdUPT8lFc37qRCGE9/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1smRYT1AJfjj3JMCuYZoPlf7addx_QSeO?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1m_W1ZYMYc09e-IoSSS3IW9SZxWggO1TH/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1Euw5LktXcn-MfkzYbqq76rvyjvDgyY2r/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">7</span><h3>ناتج التعلم الثالث</h3></header>
+  <p class="meta">الأسابيع: 7، 12</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1PEAf3mdSx7bd-jo4_zganVkHeUM0PAYn?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1w_LdMn1FTXIOa9Qa7vkD9XgKO1DbqYuU/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1vNX77BTbdm6bTg_EH7W1XLwui-NOeiS0?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1LBgG4-_KnUCx_0Kpi2D80XVQjzTc2cQK/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1EoHXxFMpsdFQjCQIMhEmEGiInSYiXBAl/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">8</span><h3>ناتج التعلم العاشر</h3></header>
+  <p class="meta">الأسابيع: 8</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1ehN3sSmzf1fjvSDE6Kl-Ryr4ecfpFZEP?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1YdLX3DAIdcRAsjeC0mStidtvcyhAkR7D/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1x0NambFe1OZSzE8Zw6J7hb6uIRqDZyP0?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/16uMzilmoZ26aQJ5Cqf9InxihqB7XX_NY/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1oB_VOsfvC4QCI02h6w_so2K3F2zg9r_z/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">9</span><h3>ناتج التعلم الرابع</h3></header>
+  <p class="meta">الأسابيع: 9، 15</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1YGsRKQ_g-vJmGpv3oOvHQtVPudKOpYim?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1yOKFG5ncHOKGxzWjCKkEAdBbD-wojFEV/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1Ul3_1t0mQZdh23Fg4D04MhMV5g0BgZkF?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1HawEuWeDhGLyoPcF1k_OhiN5RC_CWSNH/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/18GPBz20WMx_6RJamWo5vHqgerZ8o3n6D/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">10</span><h3>ناتج التعلم التاسع</h3></header>
+  <p class="meta">الأسابيع: 10، 13</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1tR9bl3x6cXwnKiwQUmbgA2K1mOP6lZGg?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1nXaw7NFh6grgrI4dAZSu-JEaoodFh1mK/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1YipukXXmTO0TFjhyKtX6UpP7kIcPb6Eg?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1F1oqpcw4U9uigRxHanirgbqkQGJhyRcz/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1gfSlTTMBnDk5uC5jOITeUCT-3vyyeb3L/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">11</span><h3>ناتج التعلم الثالث عشر</h3></header>
+  <p class="meta">الأسابيع: 14</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1_hYoE3VY5dgN9TuGVEwJtIe7FM2BNmpr?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1tNqrGYBUEz1zSMFGtV2imqD3680fmiqE/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1PgTknq14N-jpOdaWd2gdBkdR4YHTu4eC?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1kW5tfOG24KGUd2JJi3RoYTjl9b_dvEX1/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1TQSu1gL4_GMVAmpZtI3Bn_So3jSCsNmr/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">12</span><h3>ناتج التعلم الثامن</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1yUZdD_6kE0Hr9ACM8Z4hmWiUog7wg_zF?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1fvioY9YGI-kbDYGb1lppc3bESFIQAbc6/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1Bllfamo5Bg_94bxQYIRil6SOTUT74QiW?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1b2pSEWS5-Qm_ISa0h_bABakI7JvRpPzb/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1qvzSTDkSndQlflmblt9eyWCpLydhQ_A6/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">13</span><h3>ناتج التعلم الثامن عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1SXGnhafJX4QGIWVeyZi2twdX2h-0GEzU?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Zd4vz6qUovjkfUb9KAtlB5glwea5fWRK/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1-GGeyyGrPC-hkmomvpNXl7at_864Xlen?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1jwWiM-iT-CgyyeauCn0M-ehUjCshXthJ/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/16cWOil7nKKNFySFgVUdggv_bgP_pQmwA/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">14</span><h3>ناتج التعلم الثاني</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1ztz32Ng_-dGU20cY43Nv81L1cWsd36LJ?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1fGTjO-6KlZRz8t42ZvMcxJYO7PQOEhr2/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1Czjhbd9L9xajgrLZ8ohAL-S6e5Cl2qd-?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/15vP4RkCIKwBUMM3wX2eDoKf2SHXd5CID/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/17KUSbDnyU4GeQCz4yBz-buJ5X2QAjN42/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">15</span><h3>ناتج التعلم الخامس</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1kdfPxH1Jlq01QQY-9tUfgiA5eUQfG4lR?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/12RvE6yFI5Kn5FTrPG2ioS8mhoO6ME6cT/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1fWyBSB9vXkJd6RINecT66WxqiKswuaH_?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1zwFgu0C4YyktUHS2McJ9jx0cK0tjP87x/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/14HWS-ztcMjchpFXv3vSHLFdUu9sErTuO/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">16</span><h3>ناتج التعلم الخامس عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1w0DHVIjKnlfayl4eARVJgutxVxgXtt3_?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Q4Xml7MtkAnX7j9_Q9j_hOetfyVNcZsa/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1KhxcLit3vCxQwqGFGK2ZHMYsradNgwrd?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/16lkcdOV6OvU_hFm3QEU9nyojbPU2f1HA/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1kqzXCAQ_J_oczl6rZxy5cOyWmCMlNzx9/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">17</span><h3>ناتج التعلم الرابع عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1kHau7FqJ157SAXRWT5gCHjXTdDHpGojo?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1YS9l2ukJbw9icvKMkTCGnSNTB_K2wd5k/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1YZDhA1cU828cIoxX4osVOOV8cevPNiYj?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1JwwaaY3eYHXjlKC5ZaCyPUU9xJcIR3um/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1YQ7kad8sD6A6D0d9oG99QwZoi9T6uodE/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">18</span><h3>ناتج التعلم السابع</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1Z4niCiZb0kx5vi9-DnHDNpnQ7it_NO8H?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/16aLmoCETaLAoHYfegeOS8KLlkmlMVY_R/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1VpOJZEkNccNhXY1i8u1YTBMFTuwV1Sof?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1O_MUKSlgxYnicixrFQp38b5PihY8R780/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1_mh8Um4M2tz1xgvaTEsu8j7-1j-f3C_Y/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">19</span><h3>ناتج التعلم السابع عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1M5cMLKPtNSeLhWJ3fZH3k2q8GGhE3Ypj?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1LyICqYw6h5JvN6ZaONSBI67daSlpZG5i/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1QJjCMFv4Ha68ntRZBeZ-gTC-qi13fXaD?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1smejje6B3_A6tdKlrEBHXV63j2RN_RD0/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1dZw27ehnmNiMAqt1Af73y2ImzLatK1Pm/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">20</span><h3>ناتج التعلم السادس عشر</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1gmOY_Z1qZYsqZHJexao0bmUi6_zXpy8P?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Gw5ufE0XCOCM7S9Kzh5XEvEEtiID4XuC/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1ZhgSJ28D-hfFQsh_0ZzIewaUlwZcFtiW?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1d_R_YnLjzgbK68QBnmx11vZaFEwoOctn/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/15GQ74ZbOzEJzqpzBTLHiwEsLM0z9Gaxl/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">21</span><h3>ناتج التعلم الواحد وعشرون</h3></header>
+  <p class="meta">الأسابيع: ف2</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1QkzIrx-GAultbNWjF0EJPyT6KdD9LXKH?usp=drive_link" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1YJUzhsgDjfrW_a2el0pNnIAQAT0BQ_G5/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/drive/folders/1P1mmYyq6KIvJpKwv91vgPVkA-D8jnJpt?usp=drive_link" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://drive.google.com/file/d/1IsGNT81zjSZ5-WrRE4NO0WGBPRDGRPRT/view" target="_blank" rel="noopener">مهام أدائية</a> <a class="res-link" href="https://drive.google.com/file/d/1VhxoiZhsCCt5FemYgcx-fd40zHvEi7Qi/view" target="_blank" rel="noopener">إثراء</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+  </div>
+</section>
+
+<section id="bank-s6" class="section">
+  <div class="section-head">
+    <p class="eyebrow">بنك الأسئلة</p>
+    <h2>علوم 6ب</h2>
+    <p>مؤشرات المنصة مع روابط الاختبارات والموارد. يُستكمل نص كل سؤال لاحقاً من النماذج المرتبطة.</p>
+  </div>
+  <div class="bank-grid">
+  
+<article class="bank-card">
+  <header><span class="badge">1</span><h3>ناتج التعلم الأول</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UYPKa9MBUkKF6r2o-NI1vaBuzE-zUYNEupJ6YsSkbQpUNVcyRllDUktMQlBSUkIyWVNHVlA4N0c0NC4u&amp;origin=QRCode" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1fc_bK48VSHsijxU40ZZGg0Evfei1BekS/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Vwp8Jg1lCeB8KoBvirB6aV09LTRohBIp/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">2</span><h3>ناتج التعلم التاسع عشر</h3></header>
+  <p class="meta">الأسابيع: 2</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UYPKa9MBUkKF6r2o-NI1vZJMQdi-wTpMuudrwtYjlb5UN1k2TjlFOThKR1ZSNUJTV0NTMVA3UTBNUi4u" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1G5ezVVDOWprLCyAHrmX_Q8auDU1ArAyU/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1lLl_xpY-rt43YEXajSmbwFrKDJwq8K9j/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">3</span><h3>ناتج التعلم الثاني</h3></header>
+  <p class="meta">الأسابيع: 3</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UYPKa9MBUkKF6r2o-NI1vaBuzE-zUYNEupJ6YsSkbQpUQVFJSFMzMVE1SEhJWDc4MElXVVpJTjNKRi4u&amp;origin=QRCode" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1IZOC00kUeQWIeMdU1n0ebJ8Lx7YWW6y5/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1kSFfMHQzawdrECmwSY7I1i5-MG4QN6l9/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">4</span><h3>ناتج التعلم العشرون</h3></header>
+  <p class="meta">الأسابيع: 4، 5، 6</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UYPKa9MBUkKF6r2o-NI1vZJMQdi-wTpMuudrwtYjlb5UNFZRUFA5SU9VRjBWMDNXWUJCWUtNTEUzUy4u" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1RA0fhU-Za-Qpxj_M_z3EU5QKfaHwQqxv/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/146e4TFd_b-vDUVdzz58e7qEmp4gbcm5p/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">5</span><h3>ناتج التعلم الحادي عشر</h3></header>
+  <p class="meta">الأسابيع: 5، 6</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWItFJSZjLR1DomZh9jHAIx1UNU5TM1lUVkNINlc0R0Y1S0pXVlMzQTRDRi4u&amp;sharetoken=PyiRjQBJlhVAPKjV8OED" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1amC_PyFVZ0KE1s6qTwcDVClj1iFqS85G/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1-Eq5gKG1pgu9F6bJadYfN3axzkpmATh_/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">6</span><h3>ناتج التعلم الثالث</h3></header>
+  <p class="meta">الأسابيع: 7، 10، 11</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWCaStQvlPHtOpOjNPv7YGc1UMlVGVUVKQ0tVUlEwMUM3UUFXUjRNRjY3VSQlQCNjPTEu&amp;sharetoken=XHg0om6s2DsZuKylUjjD" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/12WUud5WP5HRVnHcj8PzvFhU5XAhazwWS/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1eqNQmzUWePkrlTDEvPskAlAeScNX7jHX/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">7</span><h3>ناتج التعلم الواحد وعشرون</h3></header>
+  <p class="meta">الأسابيع: 7، 8</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=UYPKa9MBUkKF6r2o-NI1vZJMQdi-wTpMuudrwtYjlb5UNFZRUFA5SU9VRjBWMDNXWUJCWUtNTEUzUy4u" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1pT3V2K0ZBSrTHznX0nXLISI7qir9Cirw/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Jo2ITTFKi8gtETatiVYe-6u5Rza7mZcI/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">8</span><h3>ناتج التعلم الخامس</h3></header>
+  <p class="meta">الأسابيع: 8، 9</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagNTiGB6AE1ZJqCmAY6cgjWdUMTcyV1JXSjJEUzk3WjFBVTU1RUJGNlBETS4u&amp;sharetoken=IDRAWjgKAXjb3x35DaOJ" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1eVXzbSzoDKCeGy0cXI8N0nKa4F-Vjzax/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1UYUoTTlljkUTdTmNm79uZWVqpwPERDzW/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">9</span><h3>ناتج التعلم الرابع</h3></header>
+  <p class="meta">الأسابيع: 8، 9</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWCaStQvlPHtOpOjNPv7YGc1UQ09FS0FMTks4RUg2SkJVWk9XRlRQS0xDUiQlQCNjPTEu&amp;sharetoken=YYxzUYSFmbSoLO5SLW2c" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/145rmkoRTw7vlZHQzPqFD4N3oul6bj3k6/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1mzSLU55iDlAt1H1qB05Ref49XAM6eXg_/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">10</span><h3>ناتج التعلم التاسع وعشرون</h3></header>
+  <p class="meta">الأسابيع: 11، 12</p>
+  <div class="links"><a class="res-link" href="https://q.me-qr.com/u0ms1ij6" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1GzQ8gdz3cdl96kHjcZnwos4g0rwg4vGF/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1bd6CFgvf10KXbrc5Nn9i5lk8_pHWZMtr/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">11</span><h3>ناتج التعلم الثامن</h3></header>
+  <p class="meta">الأسابيع: 12</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagPCcP_24MHRNi_KoFvNNbQFUNzE4QVZLUjdMMFRIQ09EWVpUSE9TS041MS4u&amp;sharetoken=MIAxqYCkqeilvpf8frJz" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1nVnBlklnQxjV3at_Zyy1pQeDMip2qmUy/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1UmaC4EMCnQf2anel34yAAW40Kt8Y9KQO/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">12</span><h3>ناتج التعلم السادس</h3></header>
+  <p class="meta">الأسابيع: 12</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagNTiGB6AE1ZJqCmAY6cgjWdURDM4MTJKNVJJRTVOQTBSOTU0RDNNQ0dZSS4u&amp;sharetoken=0wfQPPU2h39xZcyflal0" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/116Egjrq7P0lRX1H63gQROsdrsbRToQe7/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1gDa46g0LaHfYObQXIT1ksY3AGuSe9Hp1/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">13</span><h3>ناتج التعلم التاسع</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWCaStQvlPHtOpOjNPv7YGc1UMktONUVJTVNTSTVMQ080VVZQRUo1TElNWSQlQCNjPTEu&amp;sharetoken=fVP9SuEdwFa6cEYVaRe7" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/18mUIUklOpFdnDWul4-2cKsO5lvKQIWTh/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Xbh2MdGted9nW7UgfVJQV-MRa4zNNh3w/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">14</span><h3>ناتج التعلم الثلاثون</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://q.me-qr.com/l680qpdc" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1QJbQFLxmmWGhyFMpjv45pp4DU_qduk7C/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/11w6bk3B6xbg62OnTj0TDbs5QtViInDJH/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">15</span><h3>ناتج التعلم السابع</h3></header>
+  <p class="meta">الأسابيع: 13</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=vtDXcIBcikyxBWMi6kVagPCcP_24MHRNi_KoFvNNbQFUQkNKVlJER1BOWTdNUDBaSUNDSE1VNEU5Vi4u&amp;sharetoken=o0RNfZfb9Stm3OKm3jMp" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1yM-g53k93gLY0HD_q_BAuaNLaKy2uQVO/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1Zko2xB2JS7Y8fW79ULOHIdz-m_czg2-6/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">16</span><h3>ناتج التعلم العاشر</h3></header>
+  <p class="meta">الأسابيع: 14، 15، 16</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWCaStQvlPHtOpOjNPv7YGc1UMzVPREVFWjFOQzkyMEg4MkNIVEtVNVpBTiQlQCNjPTEu&amp;sharetoken=BVdIidfyefrOrpikLlw2" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1NBbsH4vH9mM0AbEUCbZ4g-7IXGlmk143/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ej8iPWecUns-hOWoFa_WUknGhBfpJl-M/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">17</span><h3>ناتج التعلم الواحد والثلاتون</h3></header>
+  <p class="meta">الأسابيع: 14</p>
+  <div class="links"><a class="res-link" href="https://q.me-qr.com/gglf0kdg" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1ZGCZ4rmYjb7yf4goHBcG-BAagdLOWNAh/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1qKEWnoRPfgGGGFvTXrvVR_-0ykxT6wyG/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">18</span><h3>ناتج التعلم الثاني والثلاثون</h3></header>
+  <p class="meta">الأسابيع: 15</p>
+  <div class="links"><a class="res-link" href="https://q.me-qr.com/n21db85e" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1H9Dm8dx8t9lqdmGoOsG6NgkQ_JI28fa4/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/14gN0KsHVrpsNE_7xCSfij-cxOdX74STp/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">19</span><h3>ناتج التعلم الثالث والثلاثون</h3></header>
+  <p class="meta">الأسابيع: 16</p>
+  <div class="links"><a class="res-link" href="https://q.me-qr.com/n21db85e" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/11RLPdGU3o8iAmRXBjjuVt75PTlgeUeY8/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1O8hNbjyiAYIrAH1bH9veGPhweIs3VHJD/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">20</span><h3>ناتج التعلم الثالث عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWJLS2UZvQRJJg_Ux-hhQjZJUOEFRV1YyNkxZNlJHUzlCVjBVSlBRSDdFUS4u&amp;sharetoken=5ObFBJF6imRwJe3dyjQH" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1s34o4YEOiSuSPFQYVBMYKebvQu-RdiPp/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/13-vJoayKTdZagVUaTbFB9jmX9uCoM4t3/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">21</span><h3>ناتج التعلم الثالث وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://elecquiz-ipitdvnq.manus.space/quiz1" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1c7xy6ciVVZxmpC4K3dtdQ0XxhizZprhe/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/15dW4gMvQdFAG3jdlrzZKVW5cLDvJQf5Y/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">22</span><h3>ناتج التعلم الثامن عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://lighthearted-biscochitos-d5c40b.netlify.app/" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1tdAlCGs7Lw0emBcOnC0vEzGkLD6_9RY-/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1qDh27wtJlBeAyM6ziU3PJ7vH7GJSMm21/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">23</span><h3>ناتج التعلم الثامن وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=63amB9ouB0OwpxhE7cWhWLr1HFmBoP5MlxnNdNwrMtBUOVdYUFI3RTg0SDJDNlBPRVo4UEsyWDhYQS4u&amp;origin=lprLink&amp;route=shorturl" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1PBE0oXkpgis4YX02JiS0e3mgyFj3cwy0/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1IE_dOcARXMRPhtViMsAsc5NbUZUPa3No/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">24</span><h3>ناتج التعلم الثاني عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=63amB9ouB0OwpxhE7cWhWMxi0MaesZlBovxyyVDBOnFURUFBOUJRM01NUk03SVQ3SkxFOUlCRUlaMS4u" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1Y4wy9gh2npp_OJgtr3MOoHB6GXnK_aoC/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">25</span><h3>ناتج التعلم الثاني وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWM3xVs7QDbxHi81QVweF-UZUM0JURjJMUTdQRFpMWk1DWUdKR09GS1RIWiQlQCNjPTEu&amp;sharetoken=ceUs4QEaLGZCio3nhXdz" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1eR1NDg2U242Qp_2oMlZGvh-amsKN-HBQ/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/165HyTmD-VhdWvhKr2UCyhrDEhjnOblsT/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">26</span><h3>ناتج التعلم الخامس عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://k.tahdiri.com/forms/exam?c=4ZNJWU7W2BDV" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1RKrF-AMh-oQVl0HqjKr18fWWAcNMYk2V/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1E3eG5DGZzwWAysHHz_uvrfE06tz8ud1i/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">27</span><h3>ناتج التعلم الخامس وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWFrIfK1o04ZNkSe5S-ohJ8xURFRGVzNXSE9QQlZORFM1R1pOSUE0UjIwUi4u&amp;sharetoken=Q2nu4ohDD3n5SOwZM3Oo" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1w-u4IQvPGWl3BIO1h6GZxpHqp2RZraYc/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1tuOtWo_qWQHKyzlwK4_rVqM6SocDiURm/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">28</span><h3>ناتج التعلم الرابع عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=63amB9ouB0OwpxhE7cWhWFQnnJ6RCdlFoGfGGkA_H_JUM0U0VjJSNFg0Wk03UENLREc1Q0NIVVBSRC4u" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1te6WToh7Xz2fSp--YvG9h7H_FrN3fs1a/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">29</span><h3>ناتج التعلم الرابع وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://drive.google.com/drive/folders/1hs4QvS2QveXuKfJMXfTut7N6haHslfoJ?usp=sharing" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1I0Y7lK6UL4A5SP44oibypHTTU_q4P2qJ/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1sQILSRj4japgc5DinmCEFoeP31lgzOR0/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">30</span><h3>ناتج التعلم السابع عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://extraordinary-platypus-7eec56.netlify.app/" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1xlRnQhQHEPFbsaCNW3IJxkRgfKcK89I4/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/19ZfGVGRVmK4YGNMH3stZMbXi5OV8eNHB/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">31</span><h3>ناتج التعلم السابع وعشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=63amB9ouB0OwpxhE7cWhWLr1HFmBoP5MlxnNdNwrMtBUOVdYUFI3RTg0SDJDNlBPRVo4UEsyWDhYQS4u&amp;origin=lprLink&amp;route=shorturl" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1mNab9wpNaXVd3s53sk7pp4SU_39k2OTX/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1VRXTtbWiq2Yu5pwDH2pBtJT-6kDBB-tL/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">32</span><h3>ناتج التعلم السادس عشر</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://daloo444-ops.github.io/physics-tests/16.html" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/13YmV8S2fA_Q2jJQH1PLMXCTxyjn6lvHb/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/11sPa0D8k0pRUpmGSy7Ow3xEnKHwvpiDV/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+
+<article class="bank-card">
+  <header><span class="badge">33</span><h3>ناتج التعلم السادس و عشرون</h3></header>
+  <p class="meta">الأسابيع: غم</p>
+  <div class="links"><a class="res-link" href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=63amB9ouB0OwpxhE7cWhWFrIfK1o04ZNkSe5S-ohJ8xURFRGVzNXSE9QQlZORFM1R1pOSUE0UjIwUi4u&amp;sharetoken=Q2nu4ohDD3n5SOwZM3Oo" target="_blank" rel="noopener">الاختبار التجريبي</a> <a class="res-link" href="https://drive.google.com/file/d/1p4sP2s39UEsxZOlKdwnbwo5MNK0GTu2B/view?usp=sharing" target="_blank" rel="noopener">ناتج التعلم / المؤشر</a> <a class="res-link" href="https://drive.google.com/file/d/1ryAViB8M2XDPtIMPFS4v_1TmsbDCt3Z-/view?usp=sharing" target="_blank" rel="noopener">فيديو</a> <a class="res-link" href="https://preeminent-froyo-e9abf7.netlify.app/" target="_blank" rel="noopener">مهام أدائية</a></div>
+  <div class="q-slot">
+    <p class="muted">نصوص الأسئلة تُستكمل من نماذج Forms / Drive المرتبطة أعلاه.</p>
+  </div>
+</article>
+  </div>
+</section>
+
+    <section id="appendices" class="section">
+      <div class="section-head">
+        <p class="eyebrow ui">الملاحق</p>
+        <h2>النماذج والملاحق</h2>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>نموذج تحليل نتائج الاختبارات والمحاكاة</h3><p>يُعبَّأ بعد كل تشخيصي أو محاكاة ويُعتمد في اجتماع الفريق.</p></article>
+        <article class="card"><h3>سجل الفجوات المهارية وخطة التدخل</h3><p>تسجيل أقل المهارات إتقاناً مع موعد إعادة القياس.</p></article>
+        <article class="card"><h3>لوحة مؤشرات الأداء الشهرية</h3><p>إتقان عام / قراءة / رياضيات / علوم / حضور التدخلات / إغلاق التوصيات.</p></article>
+        <article class="card"><h3>بطاقة تدخل علاجي أو إثرائي</h3><p>لكل مجموعة مهارية مع معيار النجاح وقرار الإغلاق.</p></article>
+        <article class="card"><h3>محضر اجتماع فريق نافس</h3><p>توثيق البيانات والقرارات والمسؤوليات ومواعيد الإغلاق.</p></article>
+        <article class="card"><h3>قائمة تحقق الجاهزية</h3><p>البيانات، القاعات، الأجهزة، التدريب، الطوارئ، التواصل الأسري.</p></article>
+        <article class="card"><h3>مصفوفة الشواهد والتوثيق</h3><p>تنظيم الشواهد حسب المبادرة والفترة ومكان الحفظ مع حماية بيانات الطلبة.</p></article>
+        <article class="card"><h3>التقرير الدوري والختامي</h3><p>ملخص التنفيذ والنمو والدروس المستفادة وتوصيات الاستدامة.</p></article>
+      </div>
+      <p class="footer-note ui">خطة تحسين نتائج الاختبارات الوطنية (نافس) — مدرسة ابتدائية مدارس شركة مستقبل الأحفاد الأهلية</p>
+    </section>
+
+  </main>
+
+  <aside class="sidebar ui" aria-label="أجزاء الخطة">
+    <div class="brand">
+      <p class="kicker">خطة نافس الداخلية</p>
+      <h1>مستقبل الأحفاد<br/>187017</h1>
+    </div>
+    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="true">أقسام الخطة</button>
+    <nav class="nav-list" id="navList">
+      <a href="#cover" class="nav-item" data-section="cover">الغلاف</a>
+<a href="#intro" class="nav-item" data-section="intro">المقدمة والفئات</a>
+<a href="#levels" class="nav-item" data-section="levels">مستويات الأداء</a>
+<a href="#team" class="nav-item" data-section="team">قرار تشكيل الفريق</a>
+<a href="#roles" class="nav-item" data-section="roles">الأدوار والمهام</a>
+<a href="#baseline" class="nav-item" data-section="baseline">خط الأساس والنتائج</a>
+<a href="#elements" class="nav-item" data-section="elements">عناصر الخطة</a>
+<a href="#initiatives" class="nav-item" data-section="initiatives">المبادرات التنفيذية</a>
+<a href="#schedules" class="nav-item" data-section="schedules">جداول التدريب</a>
+<a href="#bank-r3" class="nav-item" data-section="bank-r3">بنك أسئلة قراءة 3ب</a>
+<a href="#bank-m3" class="nav-item" data-section="bank-m3">بنك أسئلة رياضيات 3ب</a>
+<a href="#bank-r6" class="nav-item" data-section="bank-r6">بنك أسئلة قراءة 6ب</a>
+<a href="#bank-m6" class="nav-item" data-section="bank-m6">بنك أسئلة رياضيات 6ب</a>
+<a href="#bank-s6" class="nav-item" data-section="bank-s6">بنك أسئلة علوم 6ب</a>
+<a href="#appendices" class="nav-item" data-section="appendices">النماذج والملاحق</a>
+    </nav>
+  </aside>
+</div>
+
+<script>
+(function () {
+  const links = [...document.querySelectorAll('.nav-item')];
+  const sections = links
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  const navList = document.getElementById('navList');
+  const toggle = document.getElementById('navToggle');
+  let lockedUntil = 0;
+
+  function setActive(id) {
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  }
+
+  function currentSectionId() {
+    const marker = window.scrollY + Math.min(160, window.innerHeight * 0.22);
+    let current = sections[0];
+    for (const section of sections) {
+      const top = section.getBoundingClientRect().top + window.scrollY;
+      if (top <= marker + 1) current = section;
+      else break;
+    }
+    return current ? current.id : '';
+  }
+
+  function syncFromScroll() {
+    if (Date.now() < lockedUntil) return;
+    const id = currentSectionId();
+    if (id) setActive(id);
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      syncFromScroll();
+      ticking = false;
+    });
+  }, { passive: true });
+
+  links.forEach(a => a.addEventListener('click', (e) => {
+    const id = (a.getAttribute('href') || '').slice(1);
+    if (!id || !document.getElementById(id)) return;
+    e.preventDefault();
+    setActive(id);
+    lockedUntil = Date.now() + 800;
+    history.replaceState(null, '', '#' + id);
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      navList.classList.add('collapsed');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  }));
+
+  toggle?.addEventListener('click', () => {
+    const collapsed = navList.classList.toggle('collapsed');
+    toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+  });
+
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    navList.classList.add('collapsed');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (location.hash) {
+    const id = location.hash.slice(1);
+    if (document.getElementById(id)) {
+      setActive(id);
+      lockedUntil = Date.now() + 800;
+    }
+  } else {
+    syncFromScroll();
+  }
+})();
+</script>
+</body>
+</html>
